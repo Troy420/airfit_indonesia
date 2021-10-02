@@ -4,10 +4,10 @@
 	<div class="breadcrumb-area pt-205 breadcrumb-padding pb-210" style="background-image: url({{ asset('themes/ezone/assets/img/bg/breadcrumb.jpg') }})">
 		<div class="container-fluid">
 			<div class="breadcrumb-content text-center">
-				<h2>Register</h2>
+				<h2>Profiles Page</h2>
 				<ul>
 					<li><a href="#">home</a></li>
-					<li>register</li>
+					<li>profile</li>
 				</ul>
 			</div>
 		</div>
@@ -88,7 +88,7 @@
 											@enderror
 										</div>
 										<div class="col-md-6">
-											{!! Form::select('city_id', $cities, null, ['id' => 'user-city-id', 'placeholder' => '- Please Select -', 'required' => true])!!}
+											{!! Form::select('city_id', $cities, 1, ['id' => 'user-city-id', 'placeholder' => '- Please Select -', 'required' => true])!!}
 											@error('city_id')
 												<span class="invalid-feedback" role="alert">
 													<strong>{{ $message }}</strong>
@@ -127,7 +127,7 @@
 										</div>
 									</div>
 									<div class="button-box">
-										<button type="submit" class="default-btn floatright">Update Profile</button>
+										<button type="submit" class="default-btn float-right">Update Profile</button>
 									</div>
 								{!! Form::close() !!}
 							</div>

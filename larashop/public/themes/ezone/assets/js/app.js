@@ -26,7 +26,7 @@ function getQuickView(product_slug) {
 			$('#exampleModal').modal();
 		}
 	});
-} 
+}
 
 $('#user-province-id').on('change', function (e) {
 	var province_id = e.target.value;
@@ -46,13 +46,13 @@ $('#user-province-id').on('change', function (e) {
 (function($) {
 	$('#province-id').on('change', function (e) {
 		var province_id = e.target.value;
- 
+
 		$.get('/orders/cities?province_id=' + province_id, function(data){
 			$('#city-id').empty();
 			$('#city-id').append('<option value>- Please Select -</option>');
 
 			$.each(data.cities, function(city_id, city){
-			  
+
 			   $('#city-id').append('<option value="'+city_id+'">'+ city + '</option>');
 
 		   });
@@ -61,13 +61,13 @@ $('#user-province-id').on('change', function (e) {
 
 	$('#shipping-province').on('change', function (e) {
 		var province_id = e.target.value;
- 
+
 		$.get('/orders/cities?province_id=' + province_id, function(data){
 			$('#shipping-city').empty();
 			$('#shipping-city').append('<option value>- Please Select -</option>');
 
 			$.each(data.cities, function(city_id, city) {
-			  
+
 			   $('#shipping-city').append('<option value="'+city_id+'">'+ city + '</option>');
 
 		   });
@@ -96,7 +96,7 @@ $('#user-province-id').on('change', function (e) {
 	$('#shipping-cost-option').on('change', function (e) {
 		var shipping_service = e.target.value;
 		var city_id = $('#city-id').val();
-		
+
 		if ($('#ship-box').is(':checked')) {
 			city_id = $('#shipping-city').val();
 		}
@@ -110,7 +110,7 @@ $('#user-province-id').on('change', function (e) {
 				shipping_service: shipping_service
 			},
 			success: function (response) {
-				$('.total-amount').html(response.data.total);
+				$('.total-amount').html("Rp. " + response.data.total);
 			}
 		});
 	});

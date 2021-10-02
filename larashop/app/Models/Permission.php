@@ -11,7 +11,6 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @category Permission
  * @package  Permission
- * @author   Sugiarto <sugiarto.dlingo@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     http://localhost/
  */

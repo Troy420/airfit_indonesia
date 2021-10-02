@@ -20,32 +20,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0928c91-342c-4adf-9b83-70cc2f891ded" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/larashop/app/Http/Controllers/Admin/AttributeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/app/Http/Controllers/Admin/AttributeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/larashop/app/Http/Controllers/Admin/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/app/Http/Controllers/Admin/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/larashop/app/Http/Controllers/Admin/RoleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/app/Http/Controllers/Admin/RoleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/larashop/app/Http/Controllers/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/app/Http/Controllers/CartController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/larashop/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/larashop/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/app/Models/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/larashop/app/Helpers/General.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/app/Helpers/General.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/larashop/app/Http/Controllers/Admin/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/app/Http/Controllers/Admin/OrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/larashop/app/Http/Controllers/Admin/ShipmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/app/Http/Controllers/Admin/ShipmentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/larashop/app/Http/Controllers/Admin/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/app/Http/Controllers/Admin/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/larashop/app/Http/Controllers/Auth/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/app/Http/Controllers/Auth/ProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/larashop/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/larashop/app/Http/Controllers/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/app/Http/Controllers/OrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/larashop/app/Http/Controllers/PaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/app/Http/Controllers/PaymentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/larashop/app/Jobs/SendMailOrderReceived.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/app/Jobs/SendMailOrderReceived.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/larashop/app/Mail/OrderReceived.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/app/Mail/OrderReceived.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/larashop/app/Models/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/app/Models/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/larashop/app/Models/Payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/app/Models/Payment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/larashop/app/Models/Permission.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/app/Models/Permission.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/larashop/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/larashop/app/Models/ProductAttributeValue.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/app/Models/ProductAttributeValue.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/larashop/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/app/Providers/AppServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/larashop/public/themes/ezone/assets/css/bundle.css" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/public/themes/ezone/assets/css/bundle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/larashop/public/themes/ezone/assets/css/pe-icon-7-stroke.css" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/public/themes/ezone/assets/css/pe-icon-7-stroke.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/larashop/public/themes/ezone/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/public/themes/ezone/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/larashop/resources/views/admin/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/resources/views/admin/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/larashop/resources/views/admin/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/resources/views/admin/partials/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/carts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/carts/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/larashop/public/themes/ezone/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/public/themes/ezone/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/larashop/resources/views/admin/dashboard/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/resources/views/admin/dashboard/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/larashop/resources/views/admin/users/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/resources/views/admin/users/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/auth/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/auth/profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/orders/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/orders/checkout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/orders/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/orders/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/orders/received.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/orders/received.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/orders/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/orders/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/partials/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/partials/mini_cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/partials/mini_cart.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/partials/modals.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/partials/modals.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/partials/popular_products.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/partials/popular_products.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/partials/slider.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/partials/slider.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/products/grid_box.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/products/grid_box.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/products/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/products/list_box.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/products/list_box.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/products/quick_view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/products/quick_view.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/products/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/products/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/products/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/resources/views/themes/ezone/products/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/larashop/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/larashop/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/larashop/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -219,6 +223,25 @@
       <workItem from="1616485751825" duration="17881000" />
       <workItem from="1616564889827" duration="6645000" />
       <workItem from="1616644481710" duration="652000" />
+      <workItem from="1616646930606" duration="15001000" />
+      <workItem from="1616740092051" duration="20418000" />
+      <workItem from="1616765749556" duration="5359000" />
+      <workItem from="1616926531979" duration="7293000" />
+      <workItem from="1616999574931" duration="2179000" />
+      <workItem from="1617162332124" duration="6260000" />
+      <workItem from="1617255917866" duration="10289000" />
+      <workItem from="1617602814635" duration="3793000" />
+      <workItem from="1617696463098" duration="1704000" />
+      <workItem from="1617700705200" duration="58000" />
+      <workItem from="1617978858554" duration="2800000" />
+      <workItem from="1618146098601" duration="2035000" />
+      <workItem from="1618213304649" duration="1469000" />
+      <workItem from="1618387881841" duration="1899000" />
+      <workItem from="1618476490997" duration="4909000" />
+      <workItem from="1618569913595" duration="5591000" />
+      <workItem from="1618818370163" duration="2125000" />
+      <workItem from="1618907277028" duration="3657000" />
+      <workItem from="1621729454908" duration="1920000" />
     </task>
     <servers />
   </component>
@@ -238,13 +261,21 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="460" y="123" key="FileChooserDialogImpl" timestamp="1615901441826">
+    <state x="410" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1618584788739">
       <screen x="0" y="0" width="1360" height="738" />
     </state>
-    <state x="460" y="123" key="FileChooserDialogImpl/0.0.1360.738@0.0.1360.738" timestamp="1615901441825" />
-    <state x="343" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1616577500531">
+    <state x="410" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1360.738@0.0.1360.738" timestamp="1618584788739" />
+    <state x="460" y="123" key="FileChooserDialogImpl" timestamp="1617700761494">
       <screen x="0" y="0" width="1360" height="738" />
     </state>
-    <state x="343" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1360.738@0.0.1360.738" timestamp="1616577500531" />
+    <state x="460" y="123" key="FileChooserDialogImpl/0.0.1360.738@0.0.1360.738" timestamp="1617700761494" />
+    <state x="336" y="165" key="run.anything.popup" timestamp="1616766791729">
+      <screen x="0" y="0" width="1360" height="738" />
+    </state>
+    <state x="336" y="165" key="run.anything.popup/0.0.1360.738@0.0.1360.738" timestamp="1616766791729" />
+    <state x="343" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1621730107718">
+      <screen x="0" y="0" width="1360" height="738" />
+    </state>
+    <state x="343" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1360.738@0.0.1360.738" timestamp="1621730107718" />
   </component>
 </project>

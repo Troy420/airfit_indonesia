@@ -84,7 +84,7 @@ class OrderController extends Controller
 			}
 
 			$order = $orders->whereRaw("DATE(order_date) >= ?", $startDate)
-				->whereRaw("DATE(order_date) <= ? ", $endDate);
+				->whereRaw("DATE(order_date) <= ?", $endDate);
 		}
 
 		$this->data['orders'] = $orders->paginate(10);

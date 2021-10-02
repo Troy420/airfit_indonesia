@@ -16,7 +16,6 @@ use App\Models\ProductInventory;
  *
  * @category OrderController
  * @package  OrderController
- * @author   Sugiarto <sugiarto.dlingo@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     http://localhost/
  */
@@ -80,14 +79,19 @@ class OrderController extends Controller
 		$this->_updateTax();
 
 		$items = \Cart::getContent();
+
 		$this->data['items'] = $items;
+
 		$this->data['totalWeight'] = $this->_getTotalWeight() / 1000;
 
 		$this->data['provinces'] = $this->getProvinces();
-		$this->data['cities'] = isset(\Auth::user()->province_id) ? $this->getCities(\Auth::user()->province_id) : [];
+
+		// get the user province id
+		$userProvinceID = \Auth::user()->province_id;
+		// the list will be given here as a variable 'cities'
+		$this->data['cities'] = isset($userProvinceID) ? $this->getCities($userProvinceID) : [];
+
 		$this->data['user'] = \Auth::user();
-
-
 
 		return $this->loadTheme('orders.checkout', $this->data);
 	}
@@ -106,20 +110,6 @@ class OrderController extends Controller
 	}
 
 	/**
-	 * Calculate shipping cost
-	 *
-	 * @param Request $request shipping cost params
-	 *
-	 * @return array
-	 */
-	public function shippingCost(Request $request)
-	{
-		$destination = $request->input('city_id');
-		
-		return $this->_getShippingCost($destination, $this->_getTotalWeight());
-	}
-
-	/**
 	 * Set shipping cost
 	 *
 	 * @param Request $request selected shipping cost
@@ -130,7 +120,10 @@ class OrderController extends Controller
 	{
 		\Cart::removeConditionsByType('shipping');
 
+		// get the service; JNE-OKE
 		$shippingService = $request->get('shipping_service');
+
+        // Get the city id; 17
 		$destination = $request->get('city_id');
 
 		$shippingOptions = $this->_getShippingCost($destination, $this->_getTotalWeight());
@@ -162,7 +155,8 @@ class OrderController extends Controller
 
 		$response = [
 			'status' => $status,
-			'message' => $message
+			'message' => $message,
+//            'blabla' => $blabla,
 		];
 
 		if ($data) {
@@ -220,6 +214,20 @@ class OrderController extends Controller
 		\Cart::condition($condition);
 	}
 
+    /**
+     * Calculate shipping cost
+     *
+     * @param Request $request shipping cost params
+     *
+     * @return array
+     */
+    public function shippingCost(Request $request)
+    {
+        $destination = $request->input('city_id');
+
+        return $this->_getShippingCost($destination, $this->_getTotalWeight());
+    }
+
 	/**
 	 * Get shipping cost option from api
 	 *
@@ -236,18 +244,40 @@ class OrderController extends Controller
 			'weight' => $weight,
 		];
 
+		// create a new empty array for the end results
 		$results = [];
+
+
 		foreach ($this->couriers as $code => $courier) {
+		    // $this->couriers come from Controller.php
+            //      'jne' => 'JNE',
+            //		'pos' => 'POS Indonesia',
+            //		'tiki' => 'Titipan Kilat'
+
+            // put $code into the params array called courier
+            // e.g, jne, pos, tiki
 			$params['courier'] = $code;
-			
+//            array:4 [
+//              "origin" => "151"
+//              "destination" => "17"
+//              "weight" => 20.0
+//              "courier" => "jne"
+//            ]
+
 			$response = $this->rajaOngkirRequest('cost', $params, 'POST');
-			
 			if (!empty($response['rajaongkir']['results'])) {
 				foreach ($response['rajaongkir']['results'] as $cost) {
 					if (!empty($cost['costs'])) {
 						foreach ($cost['costs'] as $costDetail) {
 							$serviceName = strtoupper($cost['code']) .' - '. $costDetail['service'];
 							$costAmount = $costDetail['cost'][0]['value'];
+//                            array:1 [
+//                                0 => array:3 [
+//                                "value" => 32000
+//                                "etd" => "2-3"
+//                                "note" => ""
+//                                ]
+//                            ]
 							$etd = $costDetail['cost'][0]['etd'];
 
 							$result = [
@@ -270,7 +300,6 @@ class OrderController extends Controller
 			'weight' => $weight,
 			'results' => $results,
 		];
-		
 		return $response;
 	}
 
@@ -333,12 +362,13 @@ class OrderController extends Controller
 				$this->_saveOrderItems($order);
 				$this->_generatePaymentToken($order); //paremeter nya ada data order yang udah di simpan di database
 				$this->_saveShipment($order, $params);
-	
+
 				return $order;
 			}
 		);
 
 		if ($order) {
+
 			\Cart::clear();
 			$this->_sendEmailOrderReceived($order);
 
@@ -352,8 +382,9 @@ class OrderController extends Controller
 	private function _generatePaymentToken($order){
 		$this->initPaymentGateway();
 
+        //order table in database and take the customer_first_name, etc column
 		$customerDetails = [
-			'first_name' => $order->customer_first_name, //order table in database and take the customer_first_name column
+			'first_name' => $order->customer_first_name,
 			'last_name' => $order->customer_last_name,
 			'email' => $order->customer_email,
 			'phone' => $order->customer_phone,
@@ -372,8 +403,46 @@ class OrderController extends Controller
 				'duration' => \App\Models\Payment::EXPIRY_DURATION,
 			],
 		];
+//        array:4 [▼
+//          "enable_payments" => array:15 [▼
+//            0 => "credit_card"
+//            1 => "mandiri_clickpay"
+//            2 => "cimb_clicks"
+//            3 => "bca_klikbca"
+//            4 => "bca_klikpay"
+//            5 => "bri_epay"
+//            6 => "echannel"
+//            7 => "permata_va"
+//            8 => "bca_va"
+//            9 => "bni_va"
+//            10 => "other_va"
+//            11 => "gopay"
+//            12 => "indomaret"
+//            13 => "danamon_online"
+//            14 => "akulaku"
+//          ]
+//          "transaction_details" => array:2 [▼
+//            "order_id" => "INV/20210401/IV/I/00001"
+//            "gross_amount" => 64000.0
+//          ]
+//          "customer_details" => array:4 [▼
+//            "first_name" => "Bernardy"
+//            "last_name" => "Ho"
+//            "email" => "ho.bernardy@gmail.com"
+//            "phone" => "087775918198"
+//          ]
+//          "expiry" => array:3 [▼
+//            "start_time" => "2021-04-01 07:31:49 UTC"
+//            "unit" => "days"
+//            "duration" => 7
+//          ]
+//        ]
 
 		$snap = \Midtrans\Snap::createTransaction($params);
+//        {#1416 ▼
+//            +"token": "64495973-771e-4a59-8ec2-2d083a35f99f"
+//            +"redirect_url": "https://app.sandbox.midtrans.com/snap/v2/vtweb/64495973-771e-4a59-8ec2-2d083a35f99f"
+//        }
 
 		if ($snap->token) {
 			$order->payment_token = $snap->token;
@@ -391,9 +460,9 @@ class OrderController extends Controller
 	 */
 	private function _saveOrder($params)
 	{
+	    // city_id = 151
 		$destination = isset($params['ship_to']) ? $params['shipping_city_id'] : $params['city_id'];
 		$selectedShipping = $this->_getSelectedShipping($destination, $this->_getTotalWeight(), $params['shipping_service']);
-		
 
 		$baseTotalPrice = \Cart::getSubTotal();
 		$taxAmount = \Cart::getCondition('TAX 10%')->getCalculatedValue(\Cart::getSubTotal());
@@ -479,7 +548,7 @@ class OrderController extends Controller
 				];
 
 				$orderItem = OrderItem::create($orderItemParams);
-				
+
 				if ($orderItem) {
 					ProductInventory::reduceStock($orderItem->product_id, $orderItem->qty);
 				}

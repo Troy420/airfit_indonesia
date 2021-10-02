@@ -79,11 +79,9 @@ class ShipmentController extends Controller
 	 */
 	public function update(Request $request, $id)
 	{
-		$request->validate(
-			[
-				'track_number' => 'required|max:255',
-			]
-		);
+		$request->validate([
+            'track_number' => 'required|max:255',
+        ]);
 
 		$shipment = Shipment::findOrFail($id);
 

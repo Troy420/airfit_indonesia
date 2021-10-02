@@ -2,6 +2,6 @@
 
 @section('content')
 
-<h3>Page Dashboard</h3>
+    <h3 class="m-4">Welcome To The Admin Page</h3>
 
 @stop

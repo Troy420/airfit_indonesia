@@ -128,7 +128,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        // so ['user'] is a variable $user, that can be use to take the data like $user->name in view('admin.users.edit')
+        // so ['user'] is a variable $user,
+        // that can be use to take the data like $user->name in view('admin.users.edit')
         $this->data['user'] = User::find($id);
         $this->data['roles'] = Role::pluck('name', 'id');
         $this->data['permissions'] = Permission::all('name', 'id');
@@ -147,7 +148,7 @@ class UserController extends Controller
     {
         // validasi user
         $this->validate($request, [
-            'name' => 'bail|required|min:2',
+            'first_name' => 'bail|required|min:2',
             'email' => 'required|email|unique:users,email,' . $id,
             'roles' => 'required|min:1'
         ]);
@@ -188,7 +189,7 @@ class UserController extends Controller
             Session::flash('error', 'Unable to remove an Admin user');
             return redirect('admin/users');
         }
-       
+
         if ($user->delete()) {
             Session::flash('success', 'User has been deleted');
         }

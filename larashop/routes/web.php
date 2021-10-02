@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Web Routes
  *
@@ -15,10 +16,12 @@ Route::get('/', 'HomeController@index');
 Route::get('/products', 'ProductController@index');
 Route::get('/product/{slug}', 'ProductController@show');
 Route::get('/products/quick-view/{slug}', 'ProductController@quickView');
+
 Route::get('/carts', 'CartController@index');
 Route::get('/carts/remove/{cartID}', 'CartController@destroy');
 Route::post('/carts', 'CartController@store');
 Route::post('/carts/update', 'CartController@update');
+
 Route::get('orders/checkout', 'OrderController@checkout');
 Route::post('orders/checkout', 'OrderController@doCheckout');
 Route::post('orders/shipping-cost', 'OrderController@shippingCost');
@@ -43,7 +46,7 @@ Route::group(
 	function () {
 		Route::get('dashboard', 'DashboardController@index');
 		Route::resource('categories', 'CategoryController');
-		
+
 		Route::resource('products', 'ProductController');
 		Route::get('products/{productID}/images', 'ProductController@images')->name('products.images');
 		Route::get('products/{productID}/add-image', 'ProductController@addImage')->name('products.add_image');

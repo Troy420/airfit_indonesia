@@ -21,15 +21,15 @@ class Payment extends Model
 		'biller_code',
 		'bill_key',
     ];
-    
+
     public const PAYMENT_CHANNELS = ['credit_card', 'mandiri_clickpay', 'cimb_clicks',
 	'bca_klikbca', 'bca_klikpay', 'bri_epay', 'echannel', 'permata_va',
 	'bca_va', 'bni_va', 'other_va', 'gopay', 'indomaret',
     'danamon_online', 'akulaku'];
-    
+
     public const EXPIRY_DURATION = 7;
     public const EXPIRY_UNIT = 'days';
-    
+
     public const CHALLENGE = 'challenge';
 	public const SUCCESS = 'success';
 	public const SETTLEMENT = 'settlement';
@@ -37,7 +37,7 @@ class Payment extends Model
 	public const DENY = 'deny';
 	public const EXPIRE = 'expire';
     public const CANCEL = 'cancel';
-    
+
     public const PAYMENTCODE = 'PAY';
 
     	/**
@@ -48,18 +48,19 @@ class Payment extends Model
 	public static function generateCode()
 	{
 		$dateCode = self::PAYMENTCODE . '/' . date('Ymd') . '/' .\General::integerToRoman(date('m')). '/' .\General::integerToRoman(date('d')). '/';
+//		PAY/20200805/VIII/V/00001
 
 		$lastOrder = self::select([\DB::raw('MAX(payments.number) AS last_code')])
 			->where('number', 'like', $dateCode . '%')
 			->first();
 
 		$lastOrderCode = !empty($lastOrder) ? $lastOrder['last_code'] : null;
-		
+
 		$orderCode = $dateCode . '00001';
 		if ($lastOrderCode) {
 			$lastOrderNumber = str_replace($dateCode, '', $lastOrderCode);
 			$nextOrderNumber = sprintf('%05d', (int)$lastOrderNumber + 1);
-			
+
 			$orderCode = $dateCode . $nextOrderNumber;
 		}
 

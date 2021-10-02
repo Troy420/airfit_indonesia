@@ -6692,7 +6692,7 @@ a.icon-cart-furniture.food-cart span {
     color: #777;
     font-size: 14px;
     line-height: 1;
-    margin-top: 25px;
+    /*margin-top: 25px;*/
     padding: 12px 36px 10px;
     text-transform: uppercase;
     transition: all 0.3s ease 0s;
@@ -7037,7 +7037,7 @@ p.checkout-coupon input[type="submit"] {
     margin-bottom: 30px;
 }
 .checkout-form-list label {
-    color: #333;
+    color: #FFF;
 }
 .checkout-form-list input[type=text],
 .checkout-form-list input[type=password],
@@ -7076,11 +7076,11 @@ p.checkout-coupon input[type="submit"] {
     display: inline-block;
     margin-right: 20px;
     font-size: 25px;
-    color: #363636;
+    color: red;
 }
 .order-notes textarea {
     background-color: transparent;
-    border: 1px solid #ddd;
+    border: 1px solid #FFF;
     height: 90px;
     padding: 15px;
     width: 100%;
@@ -8621,7 +8621,7 @@ a.bundle-btn {
     line-height: 25px;
     text-align: center;
     width: 25px;
-    color: 333;
+    color: #333;
 }
 .notification-icon.notification-icon-2 > button i {
     background-color: #3b4764;
@@ -9744,4 +9744,8 @@ input[type=number] {
     -moz-appearance: textfield;
     -webkit-appearance: textfield;
     /*appearance: textfield;*/
+}
+
+address {
+    color: red;
 }

@@ -14,12 +14,10 @@
                 <a class="animate-left add-to-fav" title="Favorite"  product-slug="{{ $product->slug }}" href="">
                     <i class="pe-7s-like"></i>
                 </a>
-                <a class="animate-top add-to-card" title="Add To Cart" href="" product-id="{{ $product->id }}" product-type="{{ $product->type }}" product-slug="{{ $product->slug }}">
-                    <i class="pe-7s-cart"></i>
+                <a class="animate-top add-to-card" title="Add To Cart" href="" product-id="{{ $product->id }}"
+                    product-type="{{ $product->type }}" product-slug="{{ $product->slug }}">
+                        <i class="pe-7s-cart"></i>
                 </a>
-{{--                <a class="animate-right quick-view" title="Quick View" product-slug="{{ $product->slug }}" href="{{ url('products/quick-view/'. $product->slug) }}">--}}
-{{--                    <i class="pe-7s-look"></i>--}}
-{{--                </a>--}}
             </div>
         </div>
         <div class="product-content">

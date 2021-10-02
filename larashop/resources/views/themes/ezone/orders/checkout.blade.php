@@ -21,18 +21,18 @@
 			{!! Form::model($user, ['url' => 'orders/checkout']) !!}
 			<div class="row">
 				<div class="col-lg-6 col-md-12 col-12">
-					<div class="checkbox-form">						
+					<div class="checkbox-form">
 						<h3>Billing Details</h3>
 						<div class="row">
 							<div class="col-md-6">
 								<div class="checkout-form-list">
-									<label>First Name <span class="required">*</span></label>										
+									<label>First Name <span class="required">*</span></label>
 									{!! Form::text('first_name', null, ['required' => true]) !!}
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="checkout-form-list">
-									<label>Last Name <span class="required">*</span></label>										
+									<label>Last Name <span class="required">*</span></label>
 									{!! Form::text('last_name', null, ['required' => true]) !!}
 								</div>
 							</div>
@@ -67,22 +67,22 @@
 							</div>
 							<div class="col-md-6">
 								<div class="checkout-form-list">
-									<label>Postcode / Zip <span class="required">*</span></label>										
+									<label>Postcode / Zip <span class="required">*</span></label>
 									{!! Form::number('postcode', null, ['required' => true, 'placeholder' => 'Postcode']) !!}
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="checkout-form-list">
-									<label>Phone  <span class="required">*</span></label>										
+									<label>Phone  <span class="required">*</span></label>
 									{!! Form::text('phone', null, ['required' => true, 'placeholder' => 'Phone']) !!}
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="checkout-form-list">
-									<label>Email Address </label>										
+									<label>Email Address </label>
 									{!! Form::text('email', null, ['placeholder' => 'Email', 'readonly' => true]) !!}
 								</div>
-							</div>							
+							</div>
 						</div>
 						<div class="different-address">
 							<div class="ship-different-title">
@@ -95,13 +95,13 @@
 								<div class="row">
 									<div class="col-md-6">
 										<div class="checkout-form-list">
-											<label>First Name <span class="required">*</span></label>										
+											<label>First Name <span class="required">*</span></label>
 											{!! Form::text('shipping_first_name') !!}
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="checkout-form-list">
-											<label>Last Name <span class="required">*</span></label>										
+											<label>Last Name <span class="required">*</span></label>
 											{!! Form::text('shipping_last_name') !!}
 										</div>
 									</div>
@@ -136,33 +136,33 @@
 									</div>
 									<div class="col-md-6">
 										<div class="checkout-form-list">
-											<label>Postcode / Zip <span class="required">*</span></label>										
+											<label>Postcode / Zip <span class="required">*</span></label>
 											{!! Form::number('shipping_postcode', null, ['placeholder' => 'Postcode']) !!}
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="checkout-form-list">
-											<label>Phone  <span class="required">*</span></label>										
+											<label>Phone  <span class="required">*</span></label>
 											{!! Form::text('shipping_phone', null, ['placeholder' => 'Phone']) !!}
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="checkout-form-list">
-											<label>Email </label>										
+											<label>Email </label>
 											{!! Form::text('shipping_email', null, ['placeholder' => 'Email']) !!}
 										</div>
-									</div>	
-								</div>					
+									</div>
+								</div>
 							</div>
 							<div class="order-notes">
 								<div class="checkout-form-list mrg-nn">
 									<label>Order Notes</label>
 									{!! Form::textarea('note', null, ['cols' => 30, 'rows' => 10,'placeholder' => 'Notes about your order, e.g. special notes for delivery.']) !!}
-								</div>									
+								</div>
 							</div>
-						</div>													
+						</div>
 					</div>
-				</div>	
+				</div>
 				<div class="col-lg-6 col-md-12 col-12">
 					<div class="your-order">
 						<h3>Your order</h3>
@@ -172,7 +172,7 @@
 									<tr>
 										<th class="product-name">Product</th>
 										<th class="product-total">Total</th>
-									</tr>							
+									</tr>
 								</thead>
 								<tbody>
 									@forelse ($items as $item)
@@ -185,7 +185,7 @@
 												{{ $item->name }}	<strong class="product-quantity"> × {{ $item->quantity }}</strong>
 											</td>
 											<td class="product-total">
-												<span class="amount">{{ number_format(\Cart::get($item->id)->getPriceSum()) }}</span>
+												<span class="amount">{{ \General::priceFormat(\Cart::get($item->id)->getPriceSum()) }}</span>
 											</td>
 										</tr>
 									@empty
@@ -197,11 +197,11 @@
 								<tfoot>
 									<tr class="cart-subtotal">
 										<th>Subtotal</th>
-										<td><span class="amount">{{ number_format(\Cart::getSubTotal()) }}</span></td>
+										<td><span class="amount">{{ \General::priceFormat(\Cart::getSubTotal()) }}</span></td>
 									</tr>
 									<tr class="cart-subtotal">
 										<th>Tax</th>
-										<td><span class="amount">{{ number_format(\Cart::getCondition('TAX 10%')->getCalculatedValue(\Cart::getSubTotal())) }}</span></td>
+										<td><span class="amount">{{ \General::priceFormat(\Cart::getCondition('TAX 10%')->getCalculatedValue(\Cart::getSubTotal())) }}</span></td>
 									</tr>
 									<tr class="cart-subtotal">
 										<th>Shipping Cost ({{ $totalWeight }} kg)</th>
@@ -209,9 +209,9 @@
 									</tr>
 									<tr class="order-total">
 										<th>Order Total</th>
-										<td><strong><span class="total-amount">{{ number_format(\Cart::getTotal()) }}</span></strong>
+										<td><strong><span class="total-amount">{{ \General::priceFormat(\Cart::getTotal()) }}</span></strong>
 										</td>
-									</tr>								
+									</tr>
 								</tfoot>
 							</table>
 						</div>
@@ -251,7 +251,7 @@
 								</div>
 								<div class="order-button-payment">
 									<input type="submit" value="Place order" />
-								</div>								
+								</div>
 							</div>
 						</div>
 					</div>
@@ -260,5 +260,5 @@
 			{!! Form::close() !!}
 		</div>
 	</div>
-	<!-- checkout-area end -->	
+	<!-- checkout-area end -->
 @endsection

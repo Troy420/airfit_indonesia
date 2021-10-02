@@ -90,9 +90,16 @@
 								@endforelse
 							</tbody>
 						</table>
+
 					</div>
+
+                    @if(!$order->isPaid())
+                        <div class="cart-page-total float-right">
+                            <a href="{{ $order->payment_url }}">Proceed to payment</a>
+                        </div>
+                    @endif
 				</div>
 			</div>
 		</div>
 	</div>
-@endsection 
+@endsection

@@ -15,7 +15,6 @@ use Illuminate\Queue\SerializesModels;
  *
  * @category SendMailOrderReceived
  * @package  SendMailOrderReceived
- * @author   Sugiarto <sugiarto.dlingo@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     http://localhost/
  */
@@ -49,7 +48,7 @@ class SendMailOrderReceived implements ShouldQueue
 	public function handle()
 	{
 		$orderReceivedEmail = new \App\Mail\OrderReceived($this->order);
-		
+
 		\Mail::to($this->user->email)->send($orderReceivedEmail);
 	}
 }

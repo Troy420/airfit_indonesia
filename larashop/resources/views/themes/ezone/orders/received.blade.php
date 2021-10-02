@@ -1,5 +1,6 @@
 @extends('themes.ezone.layout')
 @section('content')
+
 	<!-- header end -->
 	<div class="breadcrumb-area pt-205 breadcrumb-padding pb-210" style="background-image: url({{ asset('themes/ezone/assets/img/bg/breadcrumb.jpg') }})">
 		<div class="container">
@@ -21,7 +22,7 @@
 					<h1 class="cart-heading">Your Order:</h4>
 					<div class="row">
 						<div class="col-xl-3 col-lg-4">
-							<p class="text-dark mb-2" style="font-weight: normal; font-size:16px; text-transform: uppercase;">Billing Address</p>
+							<p class="mb-2" style="font-weight: normal; font-size:16px; text-transform: uppercase;">Billing Address</p>
 							<address>
 								{{ $order->customer_first_name }} {{ $order->customer_last_name }}
 								<br> {{ $order->customer_address1 }}
@@ -32,7 +33,7 @@
 							</address>
 						</div>
 						<div class="col-xl-3 col-lg-4">
-							<p class="text-dark mb-2" style="font-weight: normal; font-size:16px; text-transform: uppercase;">Shipment Address</p>
+							<p class="mb-2" style="font-weight: normal; font-size:16px; text-transform: uppercase;">Shipment Address</p>
 							<address>
 								{{ $order->shipment->first_name }} {{ $order->shipment->last_name }}
 								<br> {{ $order->shipment->address1 }}
@@ -43,10 +44,10 @@
 							</address>
 						</div>
 						<div class="col-xl-3 col-lg-4">
-							<p class="text-dark mb-2" style="font-weight: normal; font-size:16px; text-transform: uppercase;">Details</p>
+							<p class="mb-2" style="font-weight: normal; font-size:16px; text-transform: uppercase;">Details</p>
 							<address>
 								Invoice ID:
-								<span class="text-dark">#{{ $order->code }}</span>
+								<span>#{{ $order->code }}</span>
 								<br> {{ \General::datetimeFormat($order->order_date) }}
 								<br> Status: {{ $order->status }}
 								<br> Payment Status: {{ $order->payment_status }}

@@ -4,10 +4,10 @@
 	<div class="breadcrumb-area pt-205 breadcrumb-padding pb-210" style="background-image: url({{ asset('themes/ezone/assets/img/bg/breadcrumb.jpg') }})">
 		<div class="container-fluid">
 			<div class="breadcrumb-content text-center">
-				<h2>My Favorites</h2>
+				<h2>My Orders</h2>
 				<ul>
 					<li><a href="{{ url('/') }}">home</a></li>
-					<li>my favorites</li>
+					<li>my Orders</li>
 				</ul>
 			</div>
 		</div>
@@ -32,7 +32,7 @@
 								</thead>
 								<tbody>
 									@forelse ($orders as $order)
-										<tr>    
+										<tr>
 											<td>
 												{{ $order->code }}<br>
 												<span style="font-size: 12px; font-weight: normal"> {{\General::datetimeFormat($order->order_date) }}</span>
@@ -58,4 +58,4 @@
 			</div>
 		</div>
 	</div>
-@endsection 
+@endsection

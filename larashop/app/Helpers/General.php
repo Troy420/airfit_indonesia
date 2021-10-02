@@ -43,7 +43,7 @@ class General
 			];
 			$array[] = $placeholder;
 		}
-		
+
 		$multiple = '';
 		if (isset($options['multiple'])) {
 			$multiple = 'multiple';
@@ -111,10 +111,10 @@ class General
 	{
 		$integer = intval($integer);
 		$result = '';
-		
+
 		// Create a lookup array that contains all of the Roman numerals.
 		$lookup = ['M' => 1000, 'CM' => 900, 'D' => 500, 'CD' => 400, 'C' => 100, 'XC' => 90, 'L' => 50, 'XL' => 40, 'X' => 10, 'IX' => 9, 'V' => 5, 'IV' => 4, 'I' => 1];
- 
+
 		foreach ($lookup as $roman => $value) {
 			$matches = intval($integer/$value);
 			$result .= str_repeat($roman, $matches);
@@ -132,10 +132,10 @@ class General
 	 *
 	 * @return string
 	 */
-	public static function priceFormat($number, $currency = '')
+	public static function priceFormat($number, $currency = 'Rp. ')
 	{
 		$currency = !empty($currency) ? $currency.' ' : '';
-		return $currency . number_format($number, 0, ",", ".");
+		return $currency . number_format($number, 0, ".", ",");
 	}
 
 	/**
@@ -154,7 +154,7 @@ class General
 			return '';
 		}
 	}
-	
+
 	/**
 	 * Show attributes json as ul tag
 	 *

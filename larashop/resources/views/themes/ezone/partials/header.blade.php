@@ -165,18 +165,18 @@
                 <div class="furniture-login">
                     <ul>
                         @guest
-                        <li>Get Access: <a href="{{ url('login') }}">Login</a></li>
-                        <li><a href="{{ url('register') }}">Register</a></li>
+                            <li>Get Access: <a href="{{ url('login') }}">Login</a></li>
+                            <li><a href="{{ url('register') }}">Register</a></li>
                         @else
-                        <li>Hello: <a href="{{ url('profile') }}">{{ Auth::user()->first_name }}</a></li>
-                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
-											document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                        </a>
+                            <li>Hello: <a href="{{ url('profile') }}">{{ Auth::user()->first_name }}</a></li>
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
 
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         @endguest
                     </ul>
                 </div>

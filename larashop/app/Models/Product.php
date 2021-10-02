@@ -7,20 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
 	protected $fillable = [
-		'parent_id',
-		'user_id',
-		'sku',
-		'type',
-		'name',
-		'slug',
-		'price',
-		'weight',
-		'length',
-		'width',
-		'height',
-		'short_description',
-		'description',
-		'status',
+		'parent_id', 'user_id', 'sku', 'type', 'name', 'slug', 'price', 'weight', 'length',	'width', 'height',
+		'short_description', 'description', 'status',
 	];
 
 	public const DRAFT = 0;

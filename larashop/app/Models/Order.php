@@ -11,7 +11,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *
  * @category Order
  * @package  Order
- * @author   Sugiarto <sugiarto.dlingo@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     http://localhost/
  */
@@ -123,12 +122,12 @@ class Order extends Model
 			->where('code', 'like', $dateCode . '%')
 			->first();
 		$lastOrderCode = !empty($lastOrder) ? $lastOrder['last_code'] : null;
-		
+
 		$orderCode = $dateCode . '00001';
 		if ($lastOrderCode) {
 			$lastOrderNumber = str_replace($dateCode, '', $lastOrderCode);
 			$nextOrderNumber = sprintf('%05d', (int)$lastOrderNumber + 1);
-			
+
 			$orderCode = $dateCode . $nextOrderNumber;
 		}
 		if (self::_isOrderCodeExists($orderCode)) {
